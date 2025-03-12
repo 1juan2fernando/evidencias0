@@ -51,9 +51,17 @@ div.capa1{
     margin-left: 25%;
     padding: 12px;
 }
+@font-face{
+    font-family: "fuente1";
+    src: url(WorkSans-VariableFont_wght.tff)format(truetype); 
+}
+@font-face{
+    font-family: "fuente2";
+    src: url(PlawriteHU-VariableFont_wght.tff)format(truetype); 
+}
 p{
     text-align: justify;
-    font-family: "Work Sans";
+    font-family: "fuente1";
 }
 
 /*.activo:hover{
