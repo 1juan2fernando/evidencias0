@@ -1,0 +1,44 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: "Sour Gummy", sans-serif;
+    font-weight: bold;
+}
+.contenedor{
+    display: flex;
+    flex-direction: column;
+
+    height: 100vh;
+}
+.encabezado{
+    padding: 15px;
+    background: blue;
+    color: white;
+    text-align: center;
+    font-size: 18px;
+}
+.contenido{
+    display: flex;
+    flex-direction: space-between;
+    flex: 1;
+}
+.caja{
+    border: 2px solid rgb(71, 83, 255);
+    margin: 15px;
+    padding: 20px;
+    flex: 1;
+    box-shadow: 5px 5px blue;
+    border-radius: 5px;
+}
+.pie{
+    padding: 15px;
+    background: blue;
+    color: white;
+    text-align: center;
+    font-size: 18px;
+}
+@media(max-width:500px){
+    .contenido{
+        flex-direction: column;
+    }
+}
