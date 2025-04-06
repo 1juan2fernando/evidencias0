@@ -190,6 +190,40 @@ main {
     color: #0000ff;
     font-weight: bold;
 }
+.iframe1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+.iframe2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+.iframe3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    
+}
+h4{
+    text-align: center;
+}
+#custom-carousel {
+    max-width: 600px;
+    margin: auto;
+}
+.carousel-inner {
+    max-height: 400px;
+    display: flex;
+    align-items: center;
+  }
+  
+
+
 
 /* ======================
    NAVEGACIÓN RESPONSIVE
