@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Operaciones con javascript</title>
+    <link rel="stylesheet" href="style_javascript_2.css">
+    <link rel="icon" href="https://www.upslp.edu.mx/upslp/wp-content/themes/icemagtheme/images/demo/icemaglogo.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="ejercicio_2.js"></script>
+</head>
+<body>
+    <h1>Registro de usuario</h1>
+    <form name="formulario">
+        <label for="user">Usuario</label>
+        <input type="text" name="user" id="user" placeholder="Usuario">
+        </br>
+        <label for="pass">Contraseña</label>
+        <input type="password" name="pass" id="pass" placeholder="Contraseña">
+        </br>
+        <label for="carrera">Carrera:</label>
+        <select name="carrera" id="carrera">
+            <option value="ITI">Ing. Tec. Info.</option>
+            <option value="ITEM">Ing Telematica</option>
+        </select>
+        </br>
+        <Label for="genero">Genero</Label>
+        </br>
+        <input type="radio" name="genero" id="genero" value="femenino">Femenino</br>
+        <input type="radio" name="genero" id="genero" value="masculino">Masculino</br>
+        </br></br>
+        <input type="checkbox" name="privacidad" id="privacidad"></br>
+        <label for="privacidad">Acepto los términos y condiciones de uso y privacidad</label>
+        </br>
+        <input type="button" name="envio" id="envio" value="Obtener Datos" onclick="leer()">
+    </br></br></br>
+        <div name="datos" id="datos">
+            <p></p>
+        </div>
+    </form>
+</body>
+</html>
