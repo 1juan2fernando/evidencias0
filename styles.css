@@ -719,3 +719,95 @@ footer {
 #descargar-pdf:hover {
     background-color: #c82333;
 }
+
+
+/* Estilos para la sección de comentarios del blog */
+.comment-section {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.comment-section h2 {
+    text-align: center;
+    color: #222;
+    margin-bottom: 25px;
+}
+
+.comment-form {
+    margin-bottom: 40px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #444;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+.form-group textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.comment-section button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.comment-section button:hover {
+    background-color: #0056b3;
+}
+
+.comments h3 {
+    border-bottom: 2px solid #007BFF;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+.comment-item {
+    background: #f9f9f9;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.comment-item h4 {
+    margin: 0 0 10px 0;
+    color: #007BFF;
+}
+
+.comment-item p {
+    margin: 0 0 10px 0;
+    line-height: 1.6;
+}
+
+.comment-item small {
+    color: #777;
+    font-size: 0.9em;
+}
