@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-        <h1>Blog</h1>
+        <h1>Blog de Teorías y Experiencias</h1>
         <nav>
             <ul>
                 <li><a href="pagina_principal.html">Inicio</a></li>
@@ -18,63 +18,111 @@
                 <li><a href="pagina_3_blog.html">Blog</a></li>
                 <li><a href="pagina_4_formulario.html">Formulario</a></li>
                 <li><a href="pagina_5_contactos.html">Contacto</a></li>
+                <li><a href="pagina_6_ayuda.html">Ayuda</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <!--<section class="blog-container">
-            <article class="post">
-                <h2>El Misterio del Triángulo de las Bermudas</h2>
-                <p class="date">Publicado el 30 de marzo de 2025</p>
-                <p class="excerpt">El Triángulo de las Bermudas ha sido objeto de muchas teorías y especulaciones...</p>
-                <button onclick="togglePost(0)">Leer más</button>
-                <div class="full-post" id="post-0">
-                    <p>Muchos creen que fenómenos paranormales o incluso actividad extraterrestre pueden estar detrás de las desapariciones...</p>
-                    <p class="fuente">Fuente: National Geographic</p>
-                </div>
-            </article>
-            <article class="post">
-                <h2>El Código Secreto de Leonardo da Vinci</h2>
-                <p class="date">Publicado el 25 de marzo de 2025</p>
-                <p class="excerpt">Leonardo da Vinci dejó tras de sí innumerables misterios en sus obras...</p>
-                <button onclick="togglePost(1)">Leer más</button>
-                <div class="full-post" id="post-1">
-                    <p>Desde la Última Cena hasta el Hombre de Vitruvio, muchas teorías han intentado descifrar sus mensajes ocultos...</p>
-                    <p class="fuente">Fuente: Historia y Arte</p>
-                </div>
-            </article>
+        <section class="intro">
+            <h2>Comparte tus teorías y experiencias</h2>
+            <p>Este es un espacio para que compartas tus propias teorías conspirativas, experiencias personales, dudas o comentarios sobre los temas que hemos tratado.</p>
         </section>
-        -->
+
         <section class="comment-section">
-            <h2>Deja tu comentario</h2>
-            <form class="comment-form">
-                <textarea placeholder="Escribe tu opinión aquí..." required></textarea>
+            <h2>Publica tu comentario</h2>
+            <form class="comment-form" id="comment-form">
+                <div class="form-group">
+                    <label for="comment-name">Tu nombre:</label>
+                    <input type="text" id="comment-name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="comment-text">Tu comentario:</label>
+                    <textarea id="comment-text" placeholder="Escribe tu teoría, experiencia o comentario aquí..." required></textarea>
+                </div>
                 <button type="submit">Publicar</button>
             </form>
+            
             <div class="comments">
-                <h3>Comentarios</h3>
-                <ul id="comment-list"></ul>
+                <h3>Comentarios recientes</h3>
+                <div id="comment-list"></div>
             </div>
         </section>
     </main>
 
+    <footer>
+        <p>&copy; 2025 - Blog de Teorías Conspirativas</p>
+    </footer>
+
     <script>
-        function togglePost(index) {
-            const post = document.getElementById(`post-${index}`);
-            post.style.display = (post.style.display === "block") ? "none" : "block";
+        // Función para cargar comentarios guardados
+        function loadComments() {
+            const savedComments = localStorage.getItem('blogComments');
+            if (savedComments) {
+                document.getElementById('comment-list').innerHTML = savedComments;
+            }
         }
 
-        document.querySelector(".comment-form").addEventListener("submit", function(event) {
+        // Función para guardar un nuevo comentario
+        function saveComment(name, text) {
+            const commentElement = document.createElement('div');
+            commentElement.className = 'comment-item';
+            
+            const nameElement = document.createElement('h4');
+            nameElement.textContent = name;
+            
+            const textElement = document.createElement('p');
+            textElement.textContent = text;
+            
+            const dateElement = document.createElement('small');
+            dateElement.textContent = new Date().toLocaleString();
+            
+            commentElement.appendChild(nameElement);
+            commentElement.appendChild(textElement);
+            commentElement.appendChild(dateElement);
+            
+            const commentList = document.getElementById('comment-list');
+            commentList.insertBefore(commentElement, commentList.firstChild);
+            
+            // Guardar en localStorage
+            localStorage.setItem('blogComments', commentList.innerHTML);
+        }
+
+        // Manejar el envío del formulario
+        document.getElementById('comment-form').addEventListener('submit', function(event) {
             event.preventDefault();
-            const commentText = this.querySelector("textarea").value;
-            if (commentText.trim() !== "") {
-                const commentList = document.getElementById("comment-list");
-                const newComment = document.createElement("li");
-                newComment.textContent = commentText;
-                commentList.appendChild(newComment);
-                this.querySelector("textarea").value = "";
+            
+            const name = document.getElementById('comment-name').value.trim();
+            const text = document.getElementById('comment-text').value.trim();
+            
+            if (name && text) {
+                saveComment(name, text);
+                document.getElementById('comment-form').reset();
             }
         });
+
+        // Cargar comentarios al iniciar la página
+        document.addEventListener('DOMContentLoaded', loadComments);
+    </script>
+    
+    <script>
+    window.addEventListener('mouseover', initLandbot, { once: true });
+    window.addEventListener('touchstart', initLandbot, { once: true });
+    var myLandbot;
+    function initLandbot() {
+      if (!myLandbot) {
+        var s = document.createElement('script');
+        s.type = "module"
+        s.async = true;
+        s.addEventListener('load', function() {
+          myLandbot = new Landbot.Popup({
+            configUrl: 'https://storage.googleapis.com/landbot.online/v3/H-2930386-7LSGN70C7DVKN6B1/index.json',
+          });
+        });
+        s.src = 'https://cdn.landbot.io/landbot-3/landbot-3.0.0.mjs';
+        var x = document.getElementsByTagName('script')[0];
+        x.parentNode.insertBefore(s, x);
+      }
+    }
     </script>
 </body>
 </html>
