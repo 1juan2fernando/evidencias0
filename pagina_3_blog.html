@@ -124,5 +124,18 @@
       }
     }
     </script>
+    <script>
+    // Script para el menú hamburguesa
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuToggle = document.createElement('button');
+        menuToggle.className = 'menu-toggle';
+        menuToggle.innerHTML = '☰';
+        document.querySelector('nav').prepend(menuToggle);
+
+        menuToggle.addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('show');
+        });
+    });
+</script>
 </body>
 </html>
