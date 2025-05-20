@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Estacionamiento</title>
+    <link rel="stylesheet" href="examen_par3_web.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Calculadora de Estacionamiento</h1>
+        <form id="parking-form">
+            <div class="form-group">
+                <label for="hours">Horas estacionado:</label>
+                <input type="number" id="hours" min="1" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="vehicle-type">Tipo de vehículo:</label>
+                <select id="vehicle-type" required>
+                    <option value="">Seleccione un tipo</option>
+                    <option value="auto">Auto chico ($20/h)</option>
+                    <option value="camioneta">Camioneta ($30/h)</option>
+                    <option value="camion">Camión ($40/h)</option>
+                </select>
+            </div>
+            
+            <button type="button" id="calculate-btn">Calcular Total</button>
+            
+            <div id="result" class="result-container">
+                <p>Total a pagar: <span id="total">$0.00</span></p>
+            </div>
+        </form>
+    </div>
+    
+    <script src="examen_par3_web.js"></script>
+</body>
+</html>
